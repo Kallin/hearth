@@ -1,6 +1,6 @@
 -- HERO
 
-local spell = Card:createAbility(10000, 'Malfurion Stormrage', 2, 'Druid', 'Gain 1 armor and 1 attack.', 'Epic')
+local spell = Card:createAbility(10000, 'Malfurion Stormrage', 2, 'Druid', 'Gain 1 armor and 1 attack.', 'Uncollectible')
 spell.onCast = function()
     this().owner.armor = this().owner.armor + 1
     this().owner:addAura('ATTACK', 1, true)

@@ -1,12 +1,5 @@
 -- HERO
 
-print('before')
-print(game)
-print(Card)
-print('after')
---print(game:random(1, 4))
-
-
 local spell = Card:createAbility(10000, 'Thrall', 2, 'Shaman', 'Randomly summons a Healing Stream Totem, Stoneclaw Totem or Searing Totem', 'Uncollectible');
 spell.onCast = function() local r = game:random(1, 4);
 if r == 1 then this().owner:summon('Healing Stream Totem'); end

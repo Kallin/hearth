@@ -1,6 +1,6 @@
 -- HERO
 
-local spell = Card:createAbility(10000, 'Rexxar', 2, 'Hunter', 'Deal 2 damage to the enemy hero.', 'Epic');
+local spell = Card:createAbility(10000, 'Rexxar', 2, 'Hunter', 'Deal 2 damage to the enemy hero.', 'Uncollectible');
 spell.onCast = function() this().owner.opponent:damage(2, this().owner); end
 
 -- WEAPONS
