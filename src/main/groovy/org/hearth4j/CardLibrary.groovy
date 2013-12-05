@@ -53,5 +53,14 @@ class CardLibrary {
         return allSpells.sort { it.name }
     }
 
+    def get(Hero hero, String cardName) {
+        def card = cardsForHeros[hero].find { it.name == cardName }
+        if (!card)
+            card = neutralCards.find { it.name == cardName }
 
+        if (!card)
+            throw new RuntimeException("unable to find card:[$cardName] for hero:[$hero]")
+
+        return card
+    }
 }

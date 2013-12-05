@@ -1,22 +1,10 @@
-import org.hearth4j.CardLibrary
-import org.hearth4j.Hero
-import org.hearth4j.lua.LuaClasspathCardProvider
-import org.hearth4j.Rarity
-import org.hearth4j.Version
+package org.hearth4j
+
 import groovy.util.logging.Slf4j
 import spock.lang.Ignore
-import spock.lang.Shared
-import spock.lang.Specification
 
 @Slf4j
-class LuaCardLoadTest extends Specification {
-
-    @Shared CardLibrary cardLibrary;
-
-    def setupSpec() {
-        final provider = new LuaClasspathCardProvider()
-        cardLibrary = provider.provideCards(new Version(Version.V1))
-    }
+class LuaCardLoadTest extends LibraryBasedTest {
 
     def 'all cards are unique'() {
         final uniqueCards = cardLibrary.allCards.unique { it.name }
