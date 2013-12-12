@@ -29,7 +29,9 @@ local spell = Card:createSpell(289, 'Frost Nova', 2, 'Mage', 'Freeze ALL enemy m
 spell.onCast = function() game:forEach(enemyMinion, function() this():freeze() end); end;
 
 local spell = Card:createSpell(195, 'Arcane Explosion', 2, 'Mage', 'Deal $SPELL_POWER:1$ damage to all enemies.', 'Basic');
-spell.onCast = function() local source = this() game:spellDamageForEach(enemy, 1, source.owner); end;
+spell.onCast = function()
+    game:spellDamageForEach(enemy, 1, this().owner)
+end
 
 local spell = Card:createSpell(253, 'Mirror Entity', 3, 'Mage', 'Secret: When a minion attacks. Summon a copy of it.', 'Common');
 spell.onCast = function() local source = this(); this().owner:addSecretAura(function() source.owner:summon(other().card.name); end).onAttack =

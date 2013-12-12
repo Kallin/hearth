@@ -39,7 +39,11 @@ spell.token = true;
 spell.taunt = true;
 
 local spell = Card:createSpell(200, 'Ancestral Healing', 0, 'Shaman', 'Restore a minion to full health.', 'Basic');
-spell.onCast = function() game:chooseTarget(minion, function() this().health = this().maxHealth; end); end
+spell.onCast = function()
+    game:chooseTarget(minion, function()
+        this().health = this().maxHealth;
+    end)
+end
 
 local spell = Card:createSpell(113, 'Forked Lightning', 1, 'Shaman', 'Deal $SPELL_POWER:2$ damage to 2 random enemy minions. Overload: (2)', 'Common');
 spell.overload = 2;

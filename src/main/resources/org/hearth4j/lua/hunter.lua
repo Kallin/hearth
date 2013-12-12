@@ -31,8 +31,15 @@ function() if source.owner ~= this().controller then aura():trigger(this()); end
 end;
 
 local spell = Card:createSpell(30, 'Explosive Trap', 2, 'Hunter', 'Secret: When a minion damages your hero, deal 2 damage to all enemies.', 'Common');
-spell.onCast = function() local source = this(); this().owner:addSecretAura(function() game:damageForEach(friendly, 2, aura().owner); end).onDamage =
-function() if this() == source.owner and isType(other(), 'Minion') then aura():trigger(this()); end end
+spell.onCast = function()
+    local source = this();
+    this().owner:addSecretAura(function()
+        game:damageForEach(friendly, 2, aura().owner);
+    end).onDamage = function()
+        if this() == source.owner and isType(other(), 'Minion')
+        then aura():trigger(this());
+        end
+    end
 end;
 
 local spell = Card:createSpell(172, 'Snake Trap', 2, 'Hunter', 'Secret: When one of your minions is attacked, summon three 1/1 Snakes.', 'Epic');

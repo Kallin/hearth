@@ -7,7 +7,7 @@ import spock.lang.Ignore
 class LuaCardLoadTest extends LibraryBasedTest {
 
     def 'all cards are unique'() {
-        final uniqueCards = cardLibrary.allCards.unique { it.name }
+        def uniqueCards = cardLibrary.allCards.unique { it.name }
 
         expect:
         (cardLibrary.allCards - uniqueCards).isEmpty()

@@ -14,7 +14,7 @@ class IllegalDeckException extends Exception {
     }
 }
 
-public enum IllegalDeckCause {
+enum IllegalDeckCause {
     TOO_BIG,                // a deck must consist of 30 cards
     TOO_SMALL,
     TOO_MANY_LEGENDARIES,   // a deck can only contain one of each legendary

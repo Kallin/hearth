@@ -1,13 +1,13 @@
 package org.hearth4j
 
 //todo: encapsulate expected card counts in here as much as possible
-public class Version {
+class Version {
 
     String version
 
     Version(String version) {
         if (!version in knownVersions)
-            throw new RuntimeException("unknown version")
+            throw new IllegalArgumentException('unknown version')
 
         this.version = version
     }

@@ -535,3 +535,6 @@ spell.broken = true
 
 local spell = Card:createMinion(0, 'Reckless Rocketeer', 4, '', '', 4, 4, 'Basic');
 spell.broken = true
+
+local spell = Card:createSpell(0, 'The Coin', 0, '', '', 'Uncollectible');
+spell.broken = true;
